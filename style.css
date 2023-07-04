@@ -1,0 +1,56 @@
+.cube{
+    border: 2px solid purple;
+    color: purple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+    perspective: 1000px;
+}
+
+.box{
+    transform-style: preserve-3d;
+    position: relative;
+    border: 2px solid red;
+    animation: spin;
+}
+.side{
+    height: 450px;
+    width: 450px;
+    position: absolute;
+    border-color: 2px solid red;
+/*figure out why i can't see the borders*/   
+}
+.side-one{
+    transform: translateZ(225px);
+}
+
+.side-two{
+    transform: rotateX(90deg) translateZ(225px);
+}
+
+.side-three{
+    transform: rotateX(180deg) translateZ(225px);
+}
+
+.side-four{
+    transform: rotateX(-90deg) translateZ(225px);
+}
+
+@keyframes spin{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(1turn);
+    }
+}
+.spinAnimation{
+    animation-name: spin; 
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
