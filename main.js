@@ -65,8 +65,8 @@ function copyAnimation (){
     document.body.appendChild(spinnerStorage);
     let cubes = document.querySelectorAll(".cube");
     for (let i = 0; i < cubes.length; i++){
-        cubes[i].classList.remove("cube" + i); //This deletes the initial cube class from the duplicates. maybe delete this so you can control all cubes from one set of buttons or have a primary control
-        cubes[i].classList.add("cube" + (i+1));
+        cubes[i].classList.remove(".cube" + i); //This deletes the initial cube class from the duplicates. maybe delete this so you can control all cubes from one set of buttons or have a primary control
+        cubes[i].classList.add(".cube" + (i+1));
     }
 }
 copyAnimationButton.addEventListener("click", copyAnimation);
@@ -76,20 +76,16 @@ console.log (copyAnimation);
 
 //#region addAnimationButtons
 
-//This function will add buttons to each animation on the page to control the animations
-
-let animationButtons = document.querySelector(".animationButtons");
-
 //This function will clone the animation buttons and append them under each cube
 
 function addAnimationButtons (){
    let animationButtonStorage = animationButtons.cloneNode(true);
    document.body.appendChild(animationButtonStorage);
    let copyAnimationButtons = document.querySelectorAll(".animationButtons");
-   for (let i = 0; i < copyAnimationButtons.length; i++){
-         
-         copyAnimationButtons[i].classList.remove("animationButtons" + i);
-         copyAnimationButtons[i].classList.add("animationButtons" + (i+1));
+   for (let i = 0; i < copyAnimationButtons.length; i++){  
+        copyAnimationButtons[i].classList.add("animationButtons" + (1));
    }
+   animationButtonStorage.addEventListener("click", addAnimationButtons);
+
 }
-animationButtons.addEventListener("click", addAnimationButtons);
+
